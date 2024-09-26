@@ -67,7 +67,7 @@ public class calculator extends AppCompatActivity {
 
                 double multiply = Double.parseDouble(inpt1.getText().toString()) * Double.parseDouble(inpt2.getText().toString());
 
-                Log.d("SUM", "" + multiply);
+                Log.d("MULTIPLY", "" + multiply);
                 inpt3.setText(String.valueOf(multiply));
             }
         });
