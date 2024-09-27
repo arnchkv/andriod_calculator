@@ -1,6 +1,12 @@
 package com.example.myhelloapp;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +21,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        final Button calc_btn = findViewById(R.id.calc);
+
+        calc_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+                // Set a specific calculator package (this example uses Google Calculator)
+                intent.setComponent(new ComponentName("com.example.myhelloapp", "com.example.myhelloapp.calculator"));
+
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    // Handle the case where the calculator app is not available
+                    Log.d("Calculator", "Calculator app not found.");
+                }
+
+                Log.d("calc btn click", "onClick: open calc");
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
