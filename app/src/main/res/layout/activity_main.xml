@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Calculator App"
         android:textSize="32sp"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:id="@+id/calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calc"
+        android:text="Calculator"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="164dp"
         tools:layout_editor_absoluteY="433dp" />
