@@ -32,7 +32,7 @@ public class BmiCalc extends AppCompatActivity {
                 final double personWeightInput = Double.parseDouble(personWeight.getText().toString());
                 final double personHeightInput = Double.parseDouble(personHeight.getText().toString());
 
-                final double resultBmi = personWeightInput / personHeightInput * 100;
+                final double resultBmi = personWeightInput / personHeightInput;
 
                 Log.d("result", "onClick: resultBmi = " + resultBmi);
 
