@@ -22,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        final Button calc_btn = findViewById(R.id.calc);
+        final Button calcBtn = findViewById(R.id.calc);
+        final Button bmiCalcBtn = findViewById(R.id.bmiCalc);
 
-        calc_btn.setOnClickListener(new View.OnClickListener() {
+        calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -42,6 +43,26 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 Log.d("calc btn click", "onClick: open calc");
+            }
+        });
+
+        bmiCalcBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
+                intent.setComponent(new ComponentName("com.example.myhelloapp", "com.example.myhelloapp.BmiCalc"));
+
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    // Handle the case where the BMI calculator app is not available
+                    Log.d("BMI Calculator", "BMI Calculator app not found.");
+                }
+
+                Log.d("BMI calc btn click", "onClick: open BMI calc");
             }
         });
 

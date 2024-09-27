@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyHelloApp</string>
+    <string name="calculator">Calculator</string>
+    <string name="calculator_app">Calculator App</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="_00_0">00.0</string>
+    <string name="calc_bmi">Calc BMI</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
 </resources>
